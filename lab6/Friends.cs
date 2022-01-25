@@ -60,5 +60,30 @@ namespace lab6
 		this.name = "";
 		this.surname = "";
 	}
-}
+		public string Name
+		{
+			get => name;
+			set => name = value;
+		}
+
+		public string Surname
+		{
+			get => surname;
+			set => surname = value;
+		}
+
+		//String processing
+		public void AdditionSapces()
+		{
+			name = name + "  ";
+			surname = surname + "  ";
+		}
+
+		//String return	
+		public String returned()
+		{
+			return (name + surname);
+		}
+
+	}
 }
