@@ -53,7 +53,7 @@ namespace lab6
 
 
         // Новый список
-        public void NewL()
+        public static void NewL()
         {
             lastLike = null;
         }
@@ -74,7 +74,7 @@ namespace lab6
     }
 
     // Вывод на дисплей содержимого списка
-   public void reprint()
+   public static void reprint()
     {
         Like uk;   // Вспомогательная ссылка
         uk = lastLike;
