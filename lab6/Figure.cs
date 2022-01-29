@@ -4,16 +4,37 @@ using System.Text;
 
 namespace lab6
 {
-    struct Figure
+    class Figure
     {
-       private int figure /*= 0*/; //Фигура
-       private int color /*= 0*/; //Цвет
+       private int figure = 0; //Фигура
+		private int color = 0; //Цвет
 
-		//public Figure() //Конструктор
-		//{
-		//figure = 0; //Фигура
-		//color = 0; //Цвет
-		//}
+		public Figure() //Конструктор
+		{
+		figure = 0; //Фигура
+		color = 0; //Цвет
+		}
+		public Figure(int FIGURE) //constructor 1
+		{
+			figure = FIGURE; //Figure
+			color = 0; //color
+		}
+
+		public Figure(int FIGURE, int COLOR) //constructor all
+		{
+			figure = FIGURE; //Figure
+			color = COLOR; //color
+		}
+
+		public void Setfigure(int FIGURE) //Set figure
+		{
+			figure = FIGURE; //Figure
+		}
+
+		public void Setcolor(int COLOR) //Set color
+		{
+			color = COLOR; //color
+		}
 
 		// Функции получения данных из полей
 		public int Getfigure()

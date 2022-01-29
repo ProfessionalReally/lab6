@@ -12,20 +12,21 @@ namespace lab6
 	private string email = ""; //Почта
 	private string password = ""; //Пароль
 	//FIGURE
-		public int FigureFigure = 0; //Фигура
-		public int FigureColor = 0; //Цвет
+		private int FigureFigure = 0; //Фигура
+		private int FigureColor = 0; //Цвет
 	//FRIENDS
-		public string[] FriendsName = new string[2]; //Имя
-		public string[] FriendsSurname = new string[2]; //Фамилия
+		private string[] FriendsName = new string[2]; //Имя
+		private string[] FriendsSurname = new string[2]; //Фамилия
 	//MUSIC
-		public string[] MusicTitle = new string[2]; //Название
-		public string[] MusicExecutor = new string[2]; //Исполнитель
+		private string[] MusicTitle = new string[2]; //Название
+		private string[] MusicExecutor = new string[2]; //Исполнитель
 	//MESSAGES
-		public string MessagestoWhom = ""; //Кому сообщение
-		public string MessagesfromWhom = ""; //От кого сообщение
-		public string Messagesmessage = ""; //Текст сообщения
-
-	public Account() //Конструктор
+		private string MessagestoWhom = ""; //Кому сообщение
+		private string MessagesfromWhom = ""; //От кого сообщение
+		private string Messagesmessage = ""; //Текст сообщения
+	//LIKE
+		private int Likeamount = 0; //Количество лайков
+public Account() //Конструктор
 {
 	name = ""; //Имя
 	 surname = ""; //Фамилия
@@ -43,9 +44,76 @@ namespace lab6
 	MessagestoWhom = "";
 	 MessagesfromWhom = "";
 	 Messagesmessage = "";
+			Likeamount = 0;
 }
 
-		// Функции получения данных из полей
+public Account(String NAME) //constructor 1
+{
+			name = NAME; //name
+			surname = ""; //surname
+			email = ""; //email
+			password = ""; //password
+			FigureFigure = 0;
+			FigureColor = 0;
+			for (int i = 0; i < 2; i++)
+			{
+				FriendsName[i] = "";
+				FriendsSurname[i] = "";
+				MusicTitle[i] = "";
+				MusicExecutor[i] = "";
+			}
+			MessagestoWhom = "";
+			MessagesfromWhom = "";
+			Messagesmessage = "";
+			Likeamount = 0;
+}
+
+		public Account(String NAME, String SURNAME, String EMAIL, String PASSWORD) //constructor all
+		{
+			name = NAME; //name
+			surname = SURNAME; //surname
+			email = EMAIL; //email
+			password = PASSWORD; //password
+			FigureFigure = 0;
+			FigureColor = 0;
+			for (int i = 0; i < 2; i++)
+			{
+				FriendsName[i] = "";
+				FriendsSurname[i] = "";
+				MusicTitle[i] = "";
+				MusicExecutor[i] = "";
+			}
+			MessagestoWhom = "";
+			MessagesfromWhom = "";
+			Messagesmessage = "";
+			Likeamount = 0;
+		}
+
+//Set name
+public void Setname(String NAME)
+{
+name = NAME;
+}
+
+//Set surname
+public void Setsurname(String SURNAME)
+{
+	surname = SURNAME;
+}
+
+//Set email
+public void Setemail(String EMAIL)
+{
+	email = EMAIL;
+}
+
+//Set password
+public void Setpassword(String PASSWORD)
+{
+	password = PASSWORD;
+}
+
+// Функции получения данных из полей
 public string Getname()
 {
 	return this.name;

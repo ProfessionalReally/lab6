@@ -17,9 +17,36 @@ namespace lab6
 	message = ""; //Текст сообщения
 	}
 
-	// Функции получения данных из полей
+		public Messages(String TOWHOM) //constructor 1
+		{
+			toWhom = TOWHOM; //to whom message
+			fromWhom = ""; //from whom message
+			message = ""; //text message
+		}
 
-	public string GettoWhom()
+		public Messages(String TOWHOM, String FROMWHOM, String MESSAGE) //constructor all
+		{
+			toWhom = TOWHOM; //to whom message
+			fromWhom = FROMWHOM; //from whom message
+			message = MESSAGE; //text message
+		}
+
+		public void SettoWhom(String TOWHOM) //Set to whom message
+		{
+			toWhom = TOWHOM; //to whom message
+		}
+
+		public void SetfromWhom(String FROMWHOM) //Set from whom message
+		{
+			fromWhom = FROMWHOM; //from whom message
+		}
+
+		void Setmessage(String MESSAGE) //Set text message
+		{
+			message = MESSAGE; //text message
+		}
+		// Функции получения данных из полей
+		public string GettoWhom()
 	{
 		return this.toWhom;
 	}

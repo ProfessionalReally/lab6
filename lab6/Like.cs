@@ -29,6 +29,20 @@ namespace lab6
         amount = v;
     }
 
+        // Поверхностная копия
+        public Like ShallowCopy()
+        {
+            return (Like)this;
+        }
+
+        // Глубокая копия
+        public Like DeepCopy()
+        {
+            Like other = (Like)this.MemberwiseClone();
+            other.Set(amount);
+            return other;
+        }
+
         // Получение количества
         public int Get()
     {
