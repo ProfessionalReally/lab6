@@ -332,7 +332,7 @@ namespace lab6
 			likeTestCopy2.Displayamount();
 			Console.WriteLine("\n\n");*/
 
-			Like like1 = new Like();
+			/*Like like1 = new Like();
 
 			Console.WriteLine("Лабораторная 10\n");
 			Console.WriteLine("Введите количество оценок - число в пределах от 0 до бессконечности!\n");
@@ -342,7 +342,52 @@ namespace lab6
 				like1.InpLike();
 			}
 
-			Console.WriteLine("Введенное количество оценок: " + like1.Get());
+			Console.WriteLine("Введенное количество оценок: " + like1.Get());*/
+
+			Like[] like1 = new Like[3]; Like[,] like2 = new Like[2, 2];
+
+			like1[0] = new Like();
+			like1[1] = new Like();
+			like1[2] = new Like();
+
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					like2[i, j] = new Like();
+
+
+			// Присваивание
+			//=================================
+			like1[0].Set(3);
+			like1[1].Set(4);
+			like1[2].Set(5);
+
+			int bases = 4;
+
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					like2[i, j].Set(bases + j);
+			//=================================
+
+			// Вывод
+			//=================================
+			Console.WriteLine("Одномерный массив размером [3]");
+			for (int i = 0; i < 3; i++)
+			{
+				like1[i].Displayamount();
+				Console.WriteLine("\n");
+			}
+
+			Console.WriteLine();
+
+			Console.WriteLine("Двумерный массив размером [2][2]");
+			for (int i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+				{
+					like2[i, j].Displayamount();
+					Console.WriteLine("\n");
+				}
+			//=================================
+
 
 
 
