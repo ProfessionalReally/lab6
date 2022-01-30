@@ -20,14 +20,20 @@ namespace lab6
         // Конструктор
      public Like(int AMOUNT)
     {
-        this.amount = AMOUNT;
-    }
+            this.amount = 0;
+            if (IsRightLike(AMOUNT))
+                this.amount = AMOUNT;
+
+     }
 
         // Инициализация структуры 
-    public void Set(int v)
+        public void Set(int v)
     {
-        amount = v;
-    }
+            this.amount = 0;
+            if (IsRightLike(v))
+                this.amount = v;
+
+        }
 
         // Поверхностная копия
         public Like ShallowCopy()
@@ -54,10 +60,40 @@ namespace lab6
     {
         string Lik;
         Console.Write("Please enter a amount likes: ");
-        Lik = Console.ReadLine(); 
-        amount = Convert.ToInt32(Lik);
-            Console.Write("\n");
+        Lik = Console.ReadLine();
+            try                                                 // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch          
+            {
+                for (int i = 0; i < Lik.Length; i++)
+                {
+                    if ((Lik[i] < '0') || (Lik[i] > '9'))
+                        throw new Exception("It string is not number!");       // выбрасывается исключение
+                }
+                Set(Convert.ToInt32(Lik));
+            }
+            catch (Exception ex)                       // обработчик исключений типа const char*
+            {
+                Console.Write("Error: " + ex.Message + '\n');
+            }
         }
+
+        // Проверка числа на подходяее для оценки
+        public bool IsRightLike(int like)
+        {
+            bool res = true;
+            try                                                    // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+            {
+                if (like < 0)                          // Если пользователь ввел неверное число, то выбрасывается исключение
+                    throw new Exception("Incorrect value.");       // выбрасывается исключение типа const char*
+                return res;
+            }
+            catch (Exception ex)           // обработчик исключений типа const char*
+            {
+                Console.WriteLine("Error: " + ex.Message + '\n');
+                res = false;
+                return res;
+            }
+        }
+
 
         // Вывод данных из структуры
         public void Displayamount()

@@ -200,7 +200,7 @@ namespace lab6
 			// Печать в обратном порядке значений элементов списка:
 			Like.reprint();*/
 
-			Account account1 = new Account();
+			/*Account account1 = new Account();
 			Account account2 = new Account("Artur");
 			Account account3 = new Account("Nikolay", "Ivanov", "NikolayIvanov@yandex.ru", "123");
 
@@ -330,7 +330,20 @@ namespace lab6
 			likeTestCopy1.Displayamount();
 			Console.WriteLine("\n");
 			likeTestCopy2.Displayamount();
-			Console.WriteLine("\n\n");
+			Console.WriteLine("\n\n");*/
+
+			Like like1 = new Like();
+
+			Console.WriteLine("Лабораторная 10\n");
+			Console.WriteLine("Введите количество оценок - число в пределах от 0 до бессконечности!\n");
+
+			while (like1.Get() == 0)
+			{
+				like1.InpLike();
+			}
+
+			Console.WriteLine("Введенное количество оценок: " + like1.Get());
+
 
 
 
