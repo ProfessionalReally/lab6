@@ -4,27 +4,28 @@ using System.Text;
 
 namespace lab6
 {
-    class Friends
+    class Friends : Human
     {
-       private string name = ""; //Имя
-       private string surname = ""; //Фамилия
+       //private string name = ""; //Имя
+       //private string surname = ""; //Фамилия
 		
-	public Friends() //Конструктор
+	public Friends() : base("", "") //Конструктор
 	{
-		name = ""; //Имя
-		surname = ""; //Фамилия
+			//name = ""; //Имя
+			//surname = ""; //Фамилия
+			
 	}
 
-public Friends(String NAME) //constructor 1
+public Friends(String NAME) : base (NAME, "")//constructor 1
 {
-	name = NAME; //name
-	surname = ""; //surname
+	//name = NAME; //name
+	//surname = ""; //surname
 }
 
-public Friends(String NAME, String SURNAME) //constructor all
+public Friends(String NAME, String SURNAME) : base(NAME, SURNAME)//constructor all
 {
-	name = NAME; //name
-	surname = SURNAME; //surname
+	//name = NAME; //name
+	//surname = SURNAME; //surname
 }
 
 public void Setname(String NAME) //Set name
@@ -54,15 +55,15 @@ public void Setsurname(String SURNAME) //Set surname
 		this.surname = SURNAME;
 	}
 
-	public void InputFriends() //Изменение данных о друзьях
+	public override void InpHuman() //Изменение данных о друзьях
 	{
 			Console.WriteLine("\nPlease enter your friend's name: ");
 			name = Console.ReadLine();
 			Console.WriteLine("\nPlease enter your friend's surname: ");
 			surname = Console.ReadLine();
-	}
+		}
 
-	public void OutputFriends() //Вывод данных о друзьях
+	public override void DisplayInfo() //Вывод данных о друзьях
 	{
 		if ((name == "") && (surname == ""))
 		{
@@ -105,6 +106,32 @@ public void Setsurname(String SURNAME) //Set surname
 		public String returned()
 		{
 			return (name + surname);
+		}
+
+		// Виртуальная функция вывода сообщения на экран, кем является человек (неизвестный, пользователь, друг)
+		public override string WhoIs()
+		{
+			return "друг";
+		}
+
+		// Поверхностное копирование
+		public Friends ShallowCopy()
+		{
+			return (Friends)this.MemberwiseClone();
+		}
+
+		// Глубокое копирование
+		public Friends DeepCopy()
+		{
+			Friends other = (Friends)this.MemberwiseClone();
+			other.name = String.Copy(name);
+			other.surname = String.Copy(surname);
+			return other;
+		}
+		// Метод ToString
+		public String ToString()
+		{
+			return (name + " " + surname);
 		}
 
 	}

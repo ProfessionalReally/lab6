@@ -344,53 +344,129 @@ namespace lab6
 
 			Console.WriteLine("Введенное количество оценок: " + like1.Get());*/
 
-			Like[] like1 = new Like[3]; Like[,] like2 = new Like[2, 2];
+			/*	Like[] like1 = new Like[3]; Like[,] like2 = new Like[2, 2];
 
-			like1[0] = new Like();
-			like1[1] = new Like();
-			like1[2] = new Like();
+				like1[0] = new Like();
+				like1[1] = new Like();
+				like1[2] = new Like();
 
-			for (int i = 0; i < 2; i++)
-				for (int j = 0; j < 2; j++)
-					like2[i, j] = new Like();
+				for (int i = 0; i < 2; i++)
+					for (int j = 0; j < 2; j++)
+						like2[i, j] = new Like();
 
 
-			// Присваивание
-			//=================================
-			like1[0].Set(3);
-			like1[1].Set(4);
-			like1[2].Set(5);
+				// Присваивание
+				//=================================
+				like1[0].Set(3);
+				like1[1].Set(4);
+				like1[2].Set(5);
 
-			int bases = 4;
+				int bases = 4;
 
-			for (int i = 0; i < 2; i++)
-				for (int j = 0; j < 2; j++)
-					like2[i, j].Set(bases + j);
-			//=================================
+				for (int i = 0; i < 2; i++)
+					for (int j = 0; j < 2; j++)
+						like2[i, j].Set(bases + j);
+				//=================================
 
-			// Вывод
-			//=================================
-			Console.WriteLine("Одномерный массив размером [3]");
-			for (int i = 0; i < 3; i++)
-			{
-				like1[i].Displayamount();
-				Console.WriteLine("\n");
-			}
+				// Вывод
+				//=================================
+				Console.WriteLine("Одномерный массив размером [3]");
+				for (int i = 0; i < 3; i++)
+				{
+					like1[i].Displayamount();
+					Console.WriteLine("\n");
+				}
+
+				Console.WriteLine();
+
+				Console.WriteLine("Двумерный массив размером [2][2]");
+				for (int i = 0; i < 2; i++)
+					for (int j = 0; j < 2; j++)
+					{
+						like2[i, j].Displayamount();
+						Console.WriteLine("\n");
+					}
+				//=================================
+
+
+
+
+				*/
+
+			//Friends friend1 = new Friends("Nikita", "Kolosov");
+			//Human human1 = new Human("Danil", "Kolosov");
+
+
+			/*Console.WriteLine("3) Продемонстрировать перегрузку метода базового");
+			Console.WriteLine("  класса в производном классе(с вызовом метода базового");
+			Console.WriteLine("  класса и без такого вызова)\n");
+
+			human1.DisplayInfo();
+			friend1.DisplayInfo();
+			Console.WriteLine();
+			human1.SayHello();
+			friend1.SayHello();
+			Console.WriteLine(human1.WhoIs());
+			Console.WriteLine(friend1.WhoIs());
+			
+			
+			friend1.DisplayInfo();
+			*/
+			/*Console.WriteLine("6) Заменить методы Display используя операции << для C++\n");
+			Console.WriteLine("Name and surname: " + friend1.ToString());
+			*/
+			/*Console.WriteLine("8) В проектах на C++,  Java, C# придумать разумное использовани\nабстрактного класса и создать его. Продемонстрировать его использование;\n");
+			friend1.InputFriends();
+			Console.WriteLine();
+			friend1.DisplayInfo();
+			*/
+
+			/*Friends friend1 = new Friends();
+			Account account1 = new Account();
+
+			Console.WriteLine("9) В  проектах Java, C# придумать разумное использование интерфейсов.\nПродемонстрировать их использование\n");
+
+			friend1.InpHuman();
+			Console.WriteLine();
+			account1.InpHuman();
+			Console.WriteLine();
+
+			friend1.DisplayInfo();
+			account1.DisplayInfo();
 
 			Console.WriteLine();
 
-			Console.WriteLine("Двумерный массив размером [2][2]");
-			for (int i = 0; i < 2; i++)
-				for (int j = 0; j < 2; j++)
-				{
-					like2[i, j].Displayamount();
-					Console.WriteLine("\n");
-				}
-			//=================================
+			Console.WriteLine(friend1.WhoIs());
+			Console.WriteLine(account1.WhoIs());
+			*/
+			Console.WriteLine("10) Продемонстрировать различие между мелким и глубоким копированием:");
+			Friends friend1 = new Friends("Ivan", "Ivanov");
+			Friends friend2 = new Friends("Marina", "Uranova");
 
+			friend2 = friend1;
 
+			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
+			friend1.DisplayInfo();
+			friend2.DisplayInfo();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			friend1.InitFriends("Ivan", "Ivanov");
+			friend1.DisplayInfo();
+			friend2.DisplayInfo();
+			Console.WriteLine("");
 
+			friend1.InitFriends("Vladimir", "Gerasimov");
+			friend2 = friend1.DeepCopy();
 
+			Console.WriteLine("Глубокая копия 1-го объекта во 2-ой:");
+			friend1.DisplayInfo();
+			friend2.DisplayInfo();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			friend1.InitFriends("Marina", "Uranova");
+			friend1.DisplayInfo();
+			friend2.DisplayInfo();
+			Console.WriteLine("\n\n");
 
 
 		}
